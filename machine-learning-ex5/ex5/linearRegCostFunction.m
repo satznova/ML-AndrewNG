@@ -26,16 +26,15 @@ grad = zeros(size(theta));
 %         By using Regularisation, we are making sure all thetas are small and all features given equal importance,
 %         since its hard to say which feature is importatnt.
 
-
 cost_term = sum( ((X*theta) - y).^2 )
 reg_term  = lambda * sum(theta(2:end).^2)
-
 J = (1/(2*m)) * (cost_term + reg_term)
 
 
-
 % LINEAR REGRESSION: REGULARISED GRADIENT FUNCTION
+% The gradient is the partial derivative of J w.r.t theta(j)
 
+grad =  ( (1/m) * ( (transpose(X) * ((X*theta) - y ))  + (lambda * theta)) )
 
 
 % =========================================================================
