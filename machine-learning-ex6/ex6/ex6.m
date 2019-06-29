@@ -37,7 +37,7 @@ plotData(X, y);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ==================== Part 2: Training Linear SVM ====================
+%% ==================== Part 2: Training Linear SVM - Without any kernel ====================
 %  The following code will train a linear SVM on the dataset and plot the
 %  decision boundary learned.
 %
