@@ -20,16 +20,21 @@ function [C, sigma] = dataset3Params(X, y, Xval, yval)
 %        mean(double(predictions ~= yval))
 %
 
-
 param_C = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]
 param_sigma = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]
 
-error = 1000
+% Initialising error to Infinity
+error = Inf
 
 for c = param_C
     for sig = param_sigma
+        
+        % Train the model with dataset X and y
         model= svmTrain(X, y, c, @(x1, x2) gaussianKernel(x1, x2, sig));
+
+        % Make predictions with cross-validation dataset for the built SVM model
         predictions = svmPredict(model, Xval);
+
         c_sig_error = mean(double(predictions ~= yval));  
 
         if c_sig_error < error
