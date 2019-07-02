@@ -38,6 +38,7 @@ for i = 1:length(lambda_vec)
     [theta] = trainLinearReg([ones(m, 1) X], y, lambda);
 
     % Compute train and val errors
+    % training error does not include regularisation term i.e lambda = 0
     cost_train = linearRegCostFunction([ones(m, 1) X], y, theta, 0);
     cost_val = linearRegCostFunction([ones(m_val, 1) Xval], yval, theta, 0);
 
