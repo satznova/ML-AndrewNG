@@ -103,6 +103,8 @@ pause;
 %  Write Up Note: Since the model is underfitting the data, we expect to
 %                 see a graph with "high bias" -- Figure 3 in ex5.pdf 
 %
+% LEARNING CURVES: if its not easy to visualise the data(high dimensions), then learning curves helps to debug learning algorithms
+% No Regularisation term while computing training and CV errors. So, lambda=0 
 
 lambda = 0;
 [error_train, error_val] = ...
